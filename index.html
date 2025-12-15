@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bean & Brew Café</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- DASHBOARD -->
+<section id="dashboard">
+  <header>
+    <h1>Bean & Brew Café</h1>
+    <nav>
+      <a href="#dashboard">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+      <button onclick="showCart()">Orders 🛒</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Bean & Brew</h2>
+    <p>Fresh coffee. Cozy vibes. Perfect moments.</p>
+  </section>
+
+  <section class="dashboard-overview">
+    <h3>Dashboard Overview</h3>
+    <div class="cards">
+      <div class="card"><h4>Today's Orders</h4><p>128</p></div>
+      <div class="card"><h4>Total Sales</h4><p>₱8,450</p></div>
+      <div class="card"><h4>Popular Drink</h4><p>Mocha</p></div>
+      <div class="card"><h4>Customers</h4><p>56</p></div>
+    </div>
+  </section>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <h2>Our Menu</h2>
+  <div class="cards">
+    <!-- Coffee Drinks -->
+    <div class="card">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.KceoN7d9ma2dSJJJRrPB1gHaE8?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Espresso">
+      <h4>Espresso</h4>
+      <p>₱120</p>
+      <div class="qty-controls">
+        <button onclick="changeQty('Espresso', -1)">−</button>
+        <span class="qty" id="EspressoQty">0</span>
+        <button onclick="addToCart('Espresso', 120)">+</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://www.tastingtable.com/img/gallery/how-the-us-helped-the-lattes-global-popularity-skyrocket/l-intro-1674148261.jpg" alt="Latte">
+      <h4>Latte</h4>
+      <p>₱150</p>
+      <div class="qty-controls">
+        <button onclick="changeQty('Latte', -1)">−</button>
+        <span class="qty" id="LatteQty">0</span>
+        <button onclick="addToCart('Latte', 150)">+</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.u-I8mBjDwOJm8egNsmxuZAHaEN?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Cappuccino">
+      <h4>Cappuccino</h4>
+      <p>₱160</p>
+      <div class="qty-controls">
+        <button onclick="changeQty('Cappuccino', -1)">−</button>
+        <span class="qty" id="CappuccinoQty">0</span>
+        <button onclick="addToCart('Cappuccino', 160)">+</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.cVOa_wOHq4wjR2Jp01diTgHaLH?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mocha">
+      <h4>Mocha</h4>
+      <p>₱170</p>
+      <div class="qty-controls">
+        <button onclick="changeQty('Mocha', -1)">−</button>
+        <span class="qty" id="MochaQty">0</span>
+        <button onclick="addToCart('Mocha', 170)">+</button>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="card">
+      <img src="https://www.onceuponachef.com/images/2017/12/cheesecake.jpg" alt="Cheesecake">
+      <h4>Cheesecake</h4>
+      <p>₱200</p>
+      <div class="qty-controls">
+        <button onclick="changeQty('Cheesecake', -1)">−</button>
+        <span class="qty" id="CheesecakeQty">0</span>
+        <button onclick="addToCart('Cheesecake', 200)">+</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://lilluna.com/wp-content/uploads/2019/01/Chocolate-Cake103.jpg" alt="Chocolate Cake">
+      <h4>Chocolate Cake</h4>
+      <p>₱220</p>
+      <div class="qty-controls">
+        <button onclick="changeQty('Chocolate Cake', -1)">−</button>
+        <span class="qty" id="Chocolate CakeQty">0</span>
+        <button onclick="addToCart('Chocolate Cake', 220)">+</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://www.cookingclassy.com/wp-content/uploads/2019/05/brownies-22.jpg" alt="Brownie">
+      <h4>Brownie</h4>
+      <p>₱180</p>
+      <div class="qty-controls">
+        <button onclick="changeQty('Brownie', -1)">−</button>
+        <span class="qty" id="BrownieQty">0</span>
+        <button onclick="addToCart('Brownie', 180)">+</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.0xYpbQLP71c6Nm7Mxexe-gHaFj?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Cupcake">
+      <h4>Cupcake</h4>
+      <p>₱120</p>
+      <div class="qty-controls">
+        <button onclick="changeQty('Cupcake', -1)">−</button>
+        <span class="qty" id="CupcakeQty">0</span>
+        <button onclick="addToCart('Cupcake', 120)">+</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-card">
+    <p>Email: beanbrew@email.com</p>
+    <p>Phone: +63 912 345 6789</p>
+    <p>Location: Manila, Philippines</p>
+  </div>
+</section>
+
+<!-- CART MODAL -->
+<div id="cartModal" class="cart-modal">
+  <div class="cart-content">
+    <h3>Your Cart</h3>
+    <ul id="cartItems"></ul>
+    <h4 id="total"></h4>
+    <button onclick="checkout()">Place Order</button>
+    <button onclick="closeCart()">Close</button>
+  </div>
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>
+
